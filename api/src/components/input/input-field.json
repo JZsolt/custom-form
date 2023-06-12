@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_input_input_fields",
+  "info": {
+    "displayName": "InputField"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "customID": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "className": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "email",
+        "password",
+        "button",
+        "checkbox",
+        "date",
+        "number",
+        "radio",
+        "submit",
+        "tel"
+      ]
+    }
+  }
+}
