@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_input_buttons",
+  "info": {
+    "displayName": "button"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "button",
+        "reset",
+        "submit"
+      ]
+    },
+    "text": {
+      "type": "string"
+    }
+  }
+}

@@ -19,6 +19,17 @@ export const formsQuery = gql`
               className
               type
             }
+            ... on ComponentInputRadioBtn {
+              id
+              label
+              defaultValue
+              name
+              RadioField {
+                id
+                value
+                label
+              }
+            }
           }
         }
       }

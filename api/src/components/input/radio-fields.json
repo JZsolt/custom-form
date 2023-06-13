@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_input_radio_fields",
+  "info": {
+    "displayName": "RadioFields",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}

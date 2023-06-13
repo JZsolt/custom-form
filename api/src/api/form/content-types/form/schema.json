@@ -21,7 +21,9 @@
     "Fields": {
       "type": "dynamiczone",
       "components": [
-        "input.input-field"
+        "input.input-field",
+        "input.button",
+        "input.radio-btn"
       ]
     }
   }

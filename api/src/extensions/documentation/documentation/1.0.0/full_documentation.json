@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-06-09T11:21:16.355Z"
+    "x-generation-date": "2023-06-13T13:46:58.585Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -107,6 +107,12 @@
                   "anyOf": [
                     {
                       "$ref": "#/components/schemas/InputInputFieldComponent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/InputButtonComponent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/InputRadioBtnComponent"
                     }
                   ]
                 }
@@ -176,6 +182,12 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/InputInputFieldComponent"
+                },
+                {
+                  "$ref": "#/components/schemas/InputButtonComponent"
+                },
+                {
+                  "$ref": "#/components/schemas/InputRadioBtnComponent"
                 }
               ]
             }
@@ -539,6 +551,71 @@
               "submit",
               "tel"
             ]
+          }
+        }
+      },
+      "InputButtonComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "__component": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "button",
+              "reset",
+              "submit"
+            ]
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      },
+      "InputRadioFieldsComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "value": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      },
+      "InputRadioBtnComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "__component": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "defaultValue": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "RadioField": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InputRadioFieldsComponent"
+            }
           }
         }
       },

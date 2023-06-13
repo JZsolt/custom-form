@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_input_radio_btns",
+  "info": {
+    "displayName": "RadioBtn",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "defaultValue": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "RadioField": {
+      "displayName": "RadioFields",
+      "type": "component",
+      "repeatable": true,
+      "component": "input.radio-fields"
+    }
+  }
+}
