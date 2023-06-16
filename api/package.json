@@ -11,6 +11,7 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "@sklinet/strapi-plugin-tinymce": "^1.0.6",
     "@strapi/plugin-documentation": "^4.10.8",
     "@strapi/plugin-graphql": "^4.10.8",
     "@strapi/plugin-i18n": "4.10.7",

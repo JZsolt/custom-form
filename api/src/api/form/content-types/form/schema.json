@@ -25,6 +25,9 @@
         "input.button",
         "input.radio-btn"
       ]
+    },
+    "FormDescription": {
+      "type": "richtext"
     }
   }
 }
