@@ -6,36 +6,63 @@ import {
   RadioGroup,
   TextField,
 } from "@mui/material";
+import { Controller } from "react-hook-form";
 
-const ComponentsSwitch = ({ field }: any) => {
-  console.log(field);
-  switch (field.__typename) {
+const ComponentsSwitch = ({
+  fields,
+  formControl,
+}: {
+  fields: any;
+  formControl: any;
+}) => {
+  switch (fields.__typename) {
     case "ComponentInputInputField": {
-      switch (field.type) {
+      switch (fields.type) {
         case "checkbox": {
           return (
-            <FormControlLabel
-              id={field.id}
-              control={<Checkbox />}
-              label={field.label}
-              name={field.name}
-              className={field.className}
-              value={field.value}
+            <Controller
+              render={({ field: { onChange } }) => (
+                <FormControlLabel
+                  id={fields.id}
+                  control={
+                    <Checkbox defaultChecked={Boolean(fields.defaultValue)} />
+                  }
+                  label={fields.label}
+                  name={fields.name}
+                  className={fields.className}
+                  onChange={(event) => {
+                    onChange(event);
+                  }}
+                />
+              )}
+              defaultValue={fields.defaultValue}
+              control={formControl}
+              name={fields.name}
             />
           );
         }
 
         default: {
           return (
-            <TextField
-              id={field.id}
-              type={field.type}
-              label={field.label}
-              variant='outlined'
-              name={field.name}
-              placeholder={field.placeholder}
-              className={field.className}
-              value={field.value}
+            <Controller
+              render={({ field: { onChange } }) => (
+                <TextField
+                  id={fields.id}
+                  type={fields.type}
+                  label={fields.label}
+                  variant='outlined'
+                  name={fields.name}
+                  placeholder={fields.placeholder}
+                  className={fields.className}
+                  defaultValue={fields.defaultValue}
+                  onChange={(event) => {
+                    onChange(event);
+                  }}
+                />
+              )}
+              defaultValue={fields.defaultValue}
+              control={formControl}
+              name={fields.name}
             />
           );
         }
@@ -44,17 +71,28 @@ const ComponentsSwitch = ({ field }: any) => {
     case "ComponentInputRadioBtn": {
       return (
         <>
-          <FormLabel id={field.id}>{field.label}</FormLabel>
-          <RadioGroup defaultValue={field.defaultValue} name={field.name}>
-            {field.RadioField.map((radio: any) => (
-              <FormControlLabel
-                id={radio.id}
-                label={radio.label}
-                value={radio.value}
-                control={<Radio />}
-              />
-            ))}
-          </RadioGroup>
+          {fields.label && <FormLabel id={fields.id}>{fields.label}</FormLabel>}
+          <Controller
+            render={({ field: { onChange } }) => (
+              <RadioGroup defaultValue={fields.defaultValue} name={fields.name}>
+                {fields.RadioField.map((radio: any) => (
+                  <FormControlLabel
+                    key={radio.id}
+                    id={radio.id}
+                    label={radio.label}
+                    value={radio.value}
+                    control={<Radio />}
+                    onChange={(event) => {
+                      onChange(event);
+                    }}
+                  />
+                ))}
+              </RadioGroup>
+            )}
+            defaultValue={fields.defaultValue}
+            control={formControl}
+            name={fields.name}
+          />
         </>
       );
     }

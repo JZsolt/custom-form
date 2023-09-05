@@ -1,18 +1,20 @@
 import { gql } from "graphql-request";
 
 export const formsQuery = gql`
-  {
-    forms {
+  query ($formId: ID) {
+    forms: forms(filters: { id: { eq: $formId } }) {
       data {
         id
         attributes {
           FormName
+          FormDescription
           customID
           Fields {
             __typename
             ... on ComponentInputInputField {
               id
               name
+              defaultValue
               customID
               label
               placeholder

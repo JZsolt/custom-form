@@ -1,7 +1,8 @@
 {
   "collectionName": "components_input_input_fields",
   "info": {
-    "displayName": "InputField"
+    "displayName": "InputField",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -34,6 +35,9 @@
         "submit",
         "tel"
       ]
+    },
+    "defaultValue": {
+      "type": "string"
     }
   }
 }
